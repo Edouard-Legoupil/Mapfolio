@@ -1,9 +1,9 @@
 Mapfolio
 ========
 
-#### [http://americanredcross.github.io/Mapfolio/](http://americanredcross.github.io/Mapfolio/) ####
+#### [http://edouard-legoupil.github.io/Mapfolio/](http://edouard-legoupil.github.io/Mapfolio/) ####
 
-Interactive portfolio to exhibit map products of the [American Red Cross](http://redcross.org/) International Services GIS team. 
+Interactive visualisation of a document library through a map 
 
 **Technology Used:**
 - [Bootstrap v3.0.0](http://getbootstrap.com/)
