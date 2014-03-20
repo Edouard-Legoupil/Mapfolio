@@ -2,16 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Mapfolio</title>
+    <title>Syrian Refugee Response Assessment Registry - Jordan</title>
+    
+    
+    <meta property="og:title" content="2014 Refugee Response in Jordan"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="http://data.unhcr.org/jordan/rrp6"/>
+    <meta property="og:image" content="http://data.unhcr.org/jordan/rrp6/thumbnail.jpg"/>
+    <meta property="og:site_name" content="2014 Refugee Response in Jordan"/>
+    <meta property="og:description" content="2014 Refugee Response in Jordan"/>
 
-    <meta property="og:image" content="http://americanredcross.github.io/Mapfolio/img/redCross.png" />
-    <meta property="og:title" content="American Red Cross" />
-    <meta property="og:description" content = "Interactive portfolio of maps produced by the International Services Department." />
+    <meta property="og:image" content="img/logo.png" />
+    <meta property="og:title" content="Assessment Registry" />
+    <meta property="og:description" content = "Needs Assessment Registry" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <meta name="author" content="American Red Cross">
-    <meta name="google-translate-customization" content="dd5207c171a5d11a-29d1c9c17ff34632-g6f9aa177fdeafd13-1a"></meta>
+    <meta name="author" content="Needs Assessment Registry">
     <link href="css/bootstrap-glyphicons.css" rel="stylesheet" />
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css" />
@@ -22,8 +29,8 @@
     <link rel="stylesheet" href="css/MarkerCluster.Default.css" />
 
     <link href="css/custom.css" rel="stylesheet">
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    
+    <link href="http://www.unhcr.org/favicon.ico" rel="icon" type="image/x-icon">
       
   </head>
   
@@ -36,20 +43,15 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div>
-          <a class="navbar-brand" href="../index.html">GIS - American Red Cross International Services</a>
+          <a class="navbar-brand" href="../index.html">Syrian Refugee Response Assessment Registry - Jordan</a>
         </div>
       </div>
-      <div id="google_translate_element" style="position:absolute;top:3px;right:3px;"></div><script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT}, 'google_translate_element');
-}
-</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
     </div>    
           
-    <a href="http://redcross.org"><img src="img/redcross-logo.png" id="arclogo" /></a>
     <button class="btn btn-small btn-zoom" type="button" onClick="zoomOut();">Zoom to Extent</button>
     <div class="twitter">
-      <a class="twitter twitterpopup" href="http://twitter.com/intent/tweet?text=awesome%20%40RedCross%20mapfolio&amp;url=http%3A%2F%2Fbit.ly%2F19V54xv&amp;related=RedCross"><span></span></a>
+      <a class="twitter twitterpopup" href="http://twitter.com/intent/tweet?text=---"><span></span></a>
     </div>   
     <div class="facebook">
       <a href="#" 
@@ -82,15 +84,14 @@ function googleTranslateElementInit() {
       <div class="container">
       
       <div class="collaborationText">
-        <p>The GIS office at American Red Cross is deeply involved in international disaster response and disaster preparedness programs throughout the world. This page shows some of the maps we've made for our friends at Red Cross, folks in the field and our operations centers.</p>
-        <p>Please report any issues to <a href="mailto://daniel.joseph@redcross.org">Daniel Joseph</a> or using <a href="https://github.com/AmericanRedCross/Mapfolio/issues" target="_blank">GitHub</a>.</p>
+        <p>Search through the Needs Assessment Registry for Jordan.</p>
       </div>
 
       <hr style="margin-bottom:0;">
 
-      <h4>How to use the mapfolio:</h4>
+      <h4>Click & Search</h4>
         <p>
-          Double click the map to zoom in on an area of interest. Click a marker on the map or a thumbnail in the gallery below to preview the map and get the option of downloading a PDF.
+          Double click the map to zoom in on an area of interest. Click a marker on the map or a thumbnail in the gallery below to get more description of the document and to download the PDF.
         </p>
 
       <h4>Search for maps by:
@@ -101,7 +102,7 @@ function googleTranslateElementInit() {
       
         <div id="filterSearch" style="display:none;">
             <p>
-              Use the filter buttons to explore this collection. The extent filters will return maps from any of the checked areas. For example you can filter for maps that are from either "Africa" <u>or</u> "LAC." The type filters will return only maps tagged with <u>every</u> checked type. For example you can filter for maps that are tagged as both "Analysis" <u>and</u> "Haiti."
+              Use the filter buttons to explore this collection. The extent filters will return documents from any of the checked areas. For example you can filter for documents that are from either "Amman" <u>or</u> "Irbid" The type filters will return only documents tagged with <u>every</u> checked type. For example you can filter for documents that are tagged as both "Cash" <u>and</u> "Mafraq"
             </p> 
           <p><h6>
             <b>Extent Filters:</b>
@@ -117,7 +118,7 @@ function googleTranslateElementInit() {
         </div>    
     
         <div id="textSearch" class="thumbnails-head">
-            <div class="pull-left" style="display:inline; margin-right:10px;">Type search terms (for example, "Haiti") here:</div>          
+            <div class="pull-left" style="display:inline; margin-right:10px;">Type search terms (for example, "SGBV") here:</div>          
             <div id="form"></div>
             <div class="clear"></div>           
         </div> 
@@ -135,7 +136,7 @@ function googleTranslateElementInit() {
     <footer>
       <div class="disclaimer pull-right">
         <p>
-            &copy; <a href="http://redcross.org" title="Red Cross" target="_blank">Red Cross</a> 2013 | 
+            &copy; <a href="http://data.unhcr.org/syrianrefugees/country.php?id=107" title="Interagency Information Sharing Portal" target="_blank">Interagency Information Sharing Portal</a>  | 
             <a title="Disclaimer" onClick="showDisclaimer();">Disclaimer</a>
         </p>        
     </div>
@@ -147,16 +148,7 @@ function googleTranslateElementInit() {
     <script src="js/leaflet.markercluster.js"></script>
     <script src="js/main.js"></script>
 
-     <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-      ga('create', 'UA-42245094-3', 'americanredcross.github.io');
-      ga('send', 'pageview');
-
-      </script>
 
   </body>
 </html>

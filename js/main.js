@@ -34,9 +34,9 @@ var mapAttribution = 'Map data &copy; <a href="http://openstreetmap.org" target=
 var mapTiles = L.tileLayer(mapUrl, {attribution: mapAttribution});
 
 var map = L.map('map', {   
-    zoom: 1,
-    maxZoom: 10,
-    center: [0,0],
+    zoom: 8,
+    maxZoom: 13,
+    center: [31.59809, 36.36304],
     scrollWheelZoom: false,
     layers: [mapTiles]
 });
@@ -47,7 +47,7 @@ function mapDisplay() {
     var remove = {fillOpacity:0, opacity:0}
     var add = {fillOpacity:1, opacity:1}
     map.on('viewreset', function() {
-        if (map.getZoom() < 5) {
+        if (map.getZoom() < 10) {
             mapTiles.setOpacity(0);
             geojson.setStyle(add);
         } else {
@@ -81,8 +81,8 @@ function clearName(e) {
 
 function callModal (item) {
     var modalDescription = $(item).find('.modalDescription').html();    
-    var mapJpg = $(item).find('img').attr("data-original").slice(0,-10) + '.jpg';
-    var pdfSrc = 'pdf/' + $(item).find('img').attr("data-original").slice(9,-10) + '.pdf'
+    var mapJpg = $(item).find('img').attr("data-original") + '.jpg';
+    var pdfSrc = 'http://data.unhcr.org/syrianrefugees/download.php?id=' + $(item).find('img').attr("data-original").slice(9,-10) + '.pdf'
     var img_maxHeight = (windowHeight*0.60).toString() + "px";
     $(".modal-detailedDescription").empty();    
     $(".modal-detailedDescription").html(modalDescription); 
@@ -115,7 +115,7 @@ function toggleSearchType (item) {
 
 //disclaimer text
 function showDisclaimer() {
-    window.alert("The maps on this page do not imply the expression of any opinion on the part of the American Red Cross concerning the legal status of a territory or of its authorities.");
+    window.alert("The maps on this page do not imply the expression of any opinion concerning the legal status of a territory or of its authorities.");
 }
 
 
@@ -123,7 +123,7 @@ function showDisclaimer() {
 function getWorld() {
     $.ajax({
         type: 'GET',
-        url: 'data/worldcountries.json',
+        url: 'data/admin1.json',
         contentType: 'application/json',
         dataType: 'json',
         timeout: 10000,
@@ -171,7 +171,7 @@ function generatepreviewhtml(){
         var itemhtml = 
             '<div id="'+item.map_id+'" style="display:none," class="thumbnailWrap col-sm-3 ALL-EXTENT ALL-SECTOR mapped '+item.extent+' '+item.sector+'">'+
                 '<div onclick="callModal(this);" class="thumbnail">'+
-                    '<img class="lazy" data-original="img/maps/'+item.fileName+'_thumb.jpg'+'" width="300" height="200" alt="" >'+
+                    '<img class="lazy" data-original="img/maps/'+item.fileName+'.jpg'+'" width="300" height="200" alt="" >'+
                     '<div class="caption">'+            
                         '<h5 style="font-weight:bold;">'+item.title+'</h5>'+
                         '<p style="font-size:small; margin:6px 0 0 0;">' + formatDate(item.productionDate) +'</p>'+        
